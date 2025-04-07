@@ -1,0 +1,34 @@
+<div class="row pt-4 mt-4 ">
+  <div class="col s12 m6 l3">
+
+    {{> messages}}
+
+    <div class="card">
+
+      <div class="card-content">
+
+        <form action="/parts/edit/{{cat.id}}" method="post" enctype="multipart/form-data">
+          <h3 class="center-align">Category Edit</h3>
+          <div class="input-field">
+            <input type="text" placeholder="name" name="categoryname" value="{{cat.name}}" />
+          </div>
+          
+            <div class="input-field">
+                <input type="text" placeholder="desc" name="desc" value="{{cat.description}}" />  
+            </div>
+             <div class="input-field">
+                <input type="hidden"  name="img" value="{{cat.img}}" />  
+                 <input type="file" class="custom-file-input" name="img">
+            </div>
+
+          <div class="input-field">
+            <button type="submit" class="btn deep-purple teal darken-3">Update</button>
+
+          </div>
+         
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

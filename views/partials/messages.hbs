@@ -1,0 +1,22 @@
+{{#if errors}}
+{{#each errors}}
+<div class="card-panel red lighten-4"> {{msg}}</div>
+{{/each}}
+{{/if}}
+
+
+{{#if successMessage}}
+<div class="card-panel green lighten-4">{{successMessage}}</div>
+
+{{/if}}
+
+{{#if errorMessage}}
+<div class="card-panel red lighten-4">{{errorMessage}}</div>
+
+{{/if}}
+
+
+{{#if error}}
+<div class="card-panel red lighten-4">{{error}}</div>
+
+{{/if}}

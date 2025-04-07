@@ -1,0 +1,33 @@
+  <nav class="ps-2 pe-2 indigo darken-4">
+      <div class="nav-wrapper indigo darken-4  pe-4">
+        <a href="#!" class="brand-logo right ps-4">صفحة المستخدم </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+            class="material-icons"
+          >menu</i></a>
+        <ul class="left hide-on-med-and-down">
+          {{#if user}}
+          
+            <li>
+             
+              <a href="/users/logout">
+                <i class="material-icons right">exit_to_app</i>
+                 {{email}}</a></li>
+
+            <li><a href="/dashboard">
+                <i class="material-icons right">home</i>الرئيسية
+              </a></li>
+
+          {{else}}
+            <li><a href="/users/register"><i
+                  class="material-icons right"
+                >add_circle_outline</i>
+                تسجيل</a></li>
+            <li><a href="/users/login"><i
+                  class="material-icons right"
+                >account_circle</i>
+                تسجيل الدخول</a></li>
+
+          {{/if}}
+        </ul>
+      </div>
+    </nav>

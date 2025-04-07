@@ -1,0 +1,23 @@
+body{
+    font-family: "Cairo", sans-serif;
+    font-weight: 300;
+  font-style: normal;
+  display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+  }
+
+  .img{
+    width: 100px;
+    height: 200px;
+    margin: auto;
+    /* place-items: center; */
+    display:block  ;
+   padding: auto;
+   object-fit: cover  ;   
+    
+  }
+ 

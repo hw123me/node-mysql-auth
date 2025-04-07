@@ -1,0 +1,35 @@
+<div class="row pt-4 mt-4 z-depth-1 indigo darken-4 "> 
+
+  <div class="col s8 ">
+    {{> messages}}
+    <div class="card ">
+      <div class="card-content ">
+        <h4 class="center-align">تسجيل الدخول</h4>
+       <div class="center-align indigo darken-4"> <i class="large material-icons white">account_circle</i></div>
+       <br>
+        <form action="/users/login" method="post">
+
+          <div class="input-field ">
+            <input type="text" placeholder="البريد الإلكتروني" name="email" />
+          </div>
+          <div class="input-field ">
+            <input type="password" placeholder="كلمة المرور" name="password" />
+          </div>
+
+          <div class="input-field center-align">
+            <button
+              type="submit"
+              class="btn btn-large deep-purple block indigo darken-4"
+            >تسجيل الدخول</button>
+
+          </div>
+          <a href="/users/register">
+            <p class="center-align"> إذا كنت لا تملك حساب؟</p>
+          </a>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>

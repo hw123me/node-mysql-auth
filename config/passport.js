@@ -8,6 +8,7 @@ passport.use(
     {
       usernameField: "email"
     },
+    
     (email, password, done) => {
       User.findOne({
         where: {
@@ -17,7 +18,7 @@ passport.use(
         .then(user => {
           if (!user) {
             console.log("user not found");
-            return done(null, false, { message: " User was not found" });
+            return done(null, false, { message: " المستخدم غير موجود" });
           } else {
             console.log("user  found");
             bcrypt.compare(password, user.password, (err, validPassword) => {
@@ -27,7 +28,7 @@ passport.use(
                 return done(null, user);
               } else {
                 console.log("incorrect password");
-                return done(null, false, { message: "wrong password" });
+                return done(null, false, { message: "كلمة المرور خاطئة" });
               }
             });
           }

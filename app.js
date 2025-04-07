@@ -5,11 +5,14 @@ const app = new express();
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
+const path = require("path");
 const port = 5000;
 
 //body parser
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: true}));
+// app.use(bodyParser.json());
+app.use(express.json());
 
 //express session
 app.use(session({
@@ -37,15 +40,20 @@ app.use((req, res, next) => {
 });
 
 
-
-
 //routes
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
+app.use("/parts", require("./routes/category"));
 //view engin
-const hbs = expbs.create({defaultLayout: "main"});
-app.engine("handlebars", hbs.engine);
-app.set('view engine', 'handlebars');
+const hbs = expbs.create({defaultLayout: "main", extname: ".hbs", partialsDir: path.join(__dirname, "views/partials")});
+app.engine(".hbs", hbs.engine);
+app.set('view engine', '.hbs');
+
+
+//set views directory
+app.set("views", path.join(__dirname, "views"));
+//static files
+app.use(express.static("public"));
 
 
 app.listen(port, () => {

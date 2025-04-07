@@ -1,0 +1,34 @@
+<div class="row pt-4 mt-4 ">
+  <div class="col s12 m6 l3">
+
+    {{> messages}}
+
+    <div class="card">
+
+      <div class="card-content">
+
+        <form action="/parts/add" method="post" enctype="multipart/form-data">
+          <h3 class="center-align">إضافة تصنيف</h3>
+          <div class="input-field">
+            <input type="text" placeholder="اسم التصنيف" name="categoryname" />
+          </div>
+          
+            <div class="input-field">
+                <input type="text" placeholder="الوصف" name="desc" />  
+            </div>
+             <div class="input-field">
+                {{!-- <input type="text" placeholder="الصورة" name="img" />   --}}
+                <input type="file" class="custom-file-input" name="img">
+            </div>
+
+          <div class="input-field">
+            <button type="submit" class="btn deep-purple teal darken-3">حفظ</button>
+
+          </div>
+         
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

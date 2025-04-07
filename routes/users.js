@@ -26,13 +26,13 @@ router.post("/register", (req, res) => {
   let errors = [];
   // Check required fields
   if (!email || !password || !password2) {
-    errors.push({ msg: "Please fill in all fields" });
+    errors.push({ msg: "أكمل البيانات الناقصة" });
   }
   if (password !== password2) {
-    errors.push({ msg: "Passwords do not match" });
+    errors.push({ msg: "كلمة المرور غير متطابقة" });
   }
   if (password.length < 5) {
-    errors.push({ msg: "Password should be at least 6 characters" });
+    errors.push({ msg: "كلمة المرور أقل من 5 رموز" });
   }
   console.log(errors);
   if (errors.length > 0) {
@@ -41,7 +41,7 @@ router.post("/register", (req, res) => {
     User.findOne({ where: { email: email } })
       .then((user) => {
         if (user) {
-          errors.push({ msg: "Email already registered" });
+          errors.push({ msg: "البريد الإلكتروني مستخدم من قبل" });
           res.render("register", { errors });
         } else {
           const newUser = new User({
@@ -59,7 +59,7 @@ router.post("/register", (req, res) => {
                   console.log("user created");
                   req.flash(
                     "successMessage",
-                    " your account is created ,please login"
+                    " تم إنشاء الحساب بنجاح من فضلك سجل الدخول"
                   );
                   res.redirect("/users/login");
                 })

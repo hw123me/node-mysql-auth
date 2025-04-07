@@ -1,0 +1,17 @@
+  <nav>
+    <div class="nav-wrapper green darken-4  pe-4">
+      <a href="#!" class="brand-logo right ps-4">لوحة التحكم</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down ">
+              {{#if user}}
+                <li><a href="/users/logout"> <i class="material-icons right">exit_to_app</i>  خروج</a></li>
+                  <li><a href="/parts/view"> <i class="material-icons right">view_module</i> التصنيفات</a></li>
+                  <li><a href="/dashboard"> <i class="material-icons right">home</i>الرئيسية </a></li>
+                  
+                {{else}}
+                <li><a href="/users/login">تسجيل الدخول</a></li>
+                <li><a href="/users/register">تسجيل</a></li>
+                {{/if}}
+      </ul>
+    </div>
+  </nav>
