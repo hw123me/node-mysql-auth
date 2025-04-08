@@ -5,7 +5,6 @@
 ><i class="material-icons">add</i></a>
 <ul class="collection">
   {{#if cats}}
-
     <div class="row">
       {{#each cats}}
         <div class="col-6">
@@ -14,7 +13,10 @@
               <h5>{{this.name}}</h5>
             </div>
             <div class="card-body">
-              <h5 class="card-title"><img src="/upload/{{this.img}}" class="rounded mx-auto d-block" /></h5>
+              <h5 class="card-title"><img
+                  src="/upload/{{this.img}}"
+                  class="rounded mx-auto d-block"
+                /></h5>
               <p class="card-text">{{this.description}}</p>
               <div class="card-action text-center">
                 <a
@@ -45,6 +47,7 @@
     </div>
 
   {{else}}
+   
     <li class="collection-header"><h4>No Cats</h4></li>
   {{/if}}
 

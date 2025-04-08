@@ -6,7 +6,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
 const path = require("path");
-const port = 5000 || process.env.PORT;
+const port = 8080 || process.env.PORT;
 
 //body parser
 // app.use(bodyParser.urlencoded({ extended: false }));

@@ -5,8 +5,8 @@ const Category = require("../models/Category");
 const { raw } = require("body-parser");
 
 //parts page
-router.get("/view",isAuthenticated, isAdmin, (req, res) => {
-    Category.findAll({raw:true})
+router.get("/view",isAuthenticated, isAdmin, async (req, res) => {
+   await Category.findAll({raw:true})
       .then((cats) => {
         res.render("parts/view", { cats , layout: "admin" });
       })
